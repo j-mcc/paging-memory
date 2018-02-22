@@ -1,0 +1,6 @@
+This program simulates an operting systems paging mechanism. I've implemented this using a message queue. Each child process has no more than 32 pages of memory (32k). A child process will randomly pick a memory address and then send a message to OSS to load the page. If the page is not in the frame table, it will be queued for the disk to read that page in (15ms elapsed time).
+
+Each frame also has a dirty and second chance bit. If the page in a frame gets modified, its dirty bit will be set forcing a write back to disk. Second chance bit is used during page replacement.
+
+To make this program:
+>make clean ; make
